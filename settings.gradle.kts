@@ -13,5 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
+
+
 rootProject.name = "Tracker"
 include(":app")
