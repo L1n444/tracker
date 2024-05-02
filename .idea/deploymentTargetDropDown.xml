@@ -5,6 +5,22 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="qr_generate">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\User\.android\avd\Pixel_6_API_24.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-05-01T15:29:44.847612900Z" />
+        </State>
+      </entry>
     </value>
   </component>
 </project>
