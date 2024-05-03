@@ -26,19 +26,20 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
             android:text="Login"
+            android:textColor="@color/black"
             android:fontFamily="@font/inter_regular"
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner"
-            android:hint="Teacher or Student ID"
-            android:padding="18dp"
             android:fontFamily="@font/inter_regular"
+            android:hint="Email"
+            android:padding="18dp"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:id="@+id/id"/>
+            android:textSize="20sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -63,8 +64,7 @@
             android:padding="18dp"
             android:backgroundTint="@color/black"
             android:background="@drawable/button"
-            android:id="@+id/login_btn"
-            android:onClick="logInBtn"/>
+            android:id="@+id/login_btn"/>
     </LinearLayout>
 
 </RelativeLayout>

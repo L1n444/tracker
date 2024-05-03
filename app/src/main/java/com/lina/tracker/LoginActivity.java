@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
 
         // Linking XML elements with Java
-        idEditText = findViewById(R.id.id);
+        idEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.login_btn);
 
