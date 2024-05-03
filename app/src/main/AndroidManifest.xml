@@ -13,10 +13,16 @@
         android:theme="@style/Theme.Tracker"
         tools:targetApi="31">
         <activity
-            android:name=".qr_generate"
+            android:name=".fragments.TeacherProfileFragment"
             android:exported="false" />
         <activity
-            android:name=".TeacherHomepageActivity"
+            android:name=".fragments.TeacherViewFragment"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.TeacherCreateFragment"
+            android:exported="false" />
+        <activity
+            android:name=".qr_generate"
             android:exported="false" />
         <activity
             android:name=".StudentHomepageActivity"
@@ -28,8 +34,12 @@
             android:name=".SplashScreenActivity"
             android:exported="false" />
         <activity
+            android:name=".TeacherHomepageActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

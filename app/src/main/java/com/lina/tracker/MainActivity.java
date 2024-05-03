@@ -8,6 +8,9 @@ import android.os.Handler;
 import android.view.View; // Import View
 import android.widget.ImageView;
 
+import com.lina.tracker.fragments.StudentHomeFragment;
+import com.lina.tracker.fragments.TeacherCreateFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, StudentHomepageActivity.class);
+                Intent intent = new Intent(MainActivity.this, TeacherHomepageActivity.class);
                 startActivity(intent);
                 finish();
             }

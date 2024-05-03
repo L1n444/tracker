@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             // Optionally, navigate to another activity
             // For example: startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
 
-            Intent toUser = new Intent(LoginActivity.this, StudentHomeFragment.class);
+            Intent toUser = new Intent(LoginActivity.this, StudentHomepageActivity.class);
             startActivity(toUser);
         } else {
 
@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                 // Optionally, navigate to another activity
                 // For example: startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
 
-                Intent toAdmin = new Intent(LoginActivity.this, TeacherHomeFragment.class);
+                Intent toAdmin = new Intent(LoginActivity.this, TeacherHomepageActivity.class);
                 startActivity(toAdmin);
             } else {
 
