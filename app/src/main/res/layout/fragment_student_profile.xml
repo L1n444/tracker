@@ -55,7 +55,7 @@
             android:src="@drawable/profile_icon" />
 
         <TextView
-            android:id="@+id/teacher_name_profile"
+            android:id="@+id/student_name_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_regular"
