@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lina.tracker.R;
-
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link TeacherViewFragment#newInstance} factory method to
@@ -62,5 +64,35 @@ public class TeacherViewFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_teacher_view, container, false);
+
+//        //navbar thing
+//
+//
+//        BottomNavigationView bottomNavigationView = bottomNavigationView.findViewById(R.id.nav_teach);
+//
+//        // Set a listener to handle item clicks
+//        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+//            switch (item.getItemId()) {
+//                case R.id.T_home:
+//                    // Handle home item click
+//                    return true;
+//                case R.id.T_qr:
+//                    // Handle QR item click
+//                    return true;
+//                case R.id.T_rep:
+//                    // Handle report item click
+//                    return true;
+//                case R.id.T_pro:
+//                    // Handle profile item click
+//                    return true;
+//                default:
+//                    return false;
+//            }
+//        });
+//
+//
+////end of nav thing
+
+
     }
 }

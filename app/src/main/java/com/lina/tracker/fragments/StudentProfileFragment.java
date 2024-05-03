@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.lina.tracker.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link StudentProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+///**
+// * A simple {@link Fragment} subclass.
+// * Use the {@link StudentProfileFragment#newInstance} factory method to
+// * create an instance of this fragment.
+// */
 public class StudentProfileFragment extends Fragment {
 
     @Override
