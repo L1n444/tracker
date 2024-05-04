@@ -37,7 +37,7 @@ public class qr_generate extends AppCompatActivity {
         String text = qr_input.getText().toString().trim();
         MultiFormatWriter writer = new MultiFormatWriter();
         try {
-            BitMatrix matrix = writer.encode(text, BarcodeFormat.QR_CODE,400,400);
+            BitMatrix matrix = writer.encode(text, BarcodeFormat.QR_CODE,700,700);
 
             BarcodeEncoder encoder = new BarcodeEncoder();
             Bitmap bitmap = encoder.createBitmap(matrix);
