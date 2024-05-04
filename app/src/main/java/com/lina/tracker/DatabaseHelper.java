@@ -37,20 +37,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_USERS);
-        insertDefaultUser(db);
+        insertDefaultUsers(db);
     }
 
-    private void insertDefaultUser(SQLiteDatabase db) {
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_ID, "601006000");
-        values.put(COLUMN_FULL_NAME, "rado no");
-        values.put(COLUMN_PHONE_NUMBER, "0123456789");
-        values.put(COLUMN_EMAIL, "student@gmail.com");
-        values.put(COLUMN_ROLE, "student");
-        values.put(COLUMN_GENDER, "male");
-        values.put(COLUMN_PASSWORD, "12345");
+    private void insertDefaultUsers(SQLiteDatabase db) {
+        // Insert default student account
+        ContentValues studentValues = new ContentValues();
+        studentValues.put(COLUMN_ID, "601006000");
+        studentValues.put(COLUMN_FULL_NAME, "rado no");
+        studentValues.put(COLUMN_PHONE_NUMBER, "0123456789");
+        studentValues.put(COLUMN_EMAIL, "student@gmail.com");
+        studentValues.put(COLUMN_ROLE, "student");
+        studentValues.put(COLUMN_GENDER, "male");
+        studentValues.put(COLUMN_PASSWORD, "12345");
+        db.insert(TABLE_NAME, null, studentValues);
 
-        db.insert(TABLE_NAME, null, values);
+        // Insert default teacher account
+        ContentValues teacherValues = new ContentValues();
+        teacherValues.put(COLUMN_ID, "601006001");
+        teacherValues.put(COLUMN_FULL_NAME, "Teacher Name");
+        teacherValues.put(COLUMN_PHONE_NUMBER, "0123456789");
+        teacherValues.put(COLUMN_EMAIL, "teacher@gmail.com");
+        teacherValues.put(COLUMN_ROLE, "teacher");
+        teacherValues.put(COLUMN_GENDER, "female");
+        teacherValues.put(COLUMN_PASSWORD, "11111");
+        db.insert(TABLE_NAME, null, teacherValues);
     }
 
     @Override
@@ -60,7 +71,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Method to add a new user to the database
-    public long addUser(String id, String fullName, String phoneNumber, String email, String gender, String password) {
+    public long addUser(String id, String fullName, String phoneNumber, String email, String gender, String password, String role) {
+        if (email.isEmpty() || password.isEmpty()) {
+            // Email or password is empty, return -1 to indicate failure
+            return -1;
+        }
+
         if (checkEmailExists(email)) {
             // Email already exists, return -1 to indicate failure
             return -1;
@@ -73,7 +89,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_PHONE_NUMBER, phoneNumber);
         values.put(COLUMN_EMAIL, email);
         values.put(COLUMN_GENDER, gender);
-        values.put(COLUMN_ROLE, "student");
+        values.put(COLUMN_ROLE, role);
         values.put(COLUMN_PASSWORD, password);
 
         long result = db.insert(TABLE_NAME, null, values);
@@ -91,12 +107,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return emailExists;
     }
 
-    public boolean authenticateUser(String id, String password, String role) {
+    // Method to authenticate a user
+    public boolean authenticateUser(String email, String password, String role) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + "=? AND " + COLUMN_PASSWORD + "=? AND " + COLUMN_ROLE + "=?";
-        Cursor cursor = db.rawQuery(query, new String[]{id, password, role});
-        boolean isValid = cursor.getCount() > 0;
+        String query = "SELECT " + COLUMN_PASSWORD + " FROM " + TABLE_NAME + " WHERE " + COLUMN_EMAIL + "=? AND " + COLUMN_ROLE + "=?";
+        Cursor cursor = db.rawQuery(query, new String[]{email, role});
+
+        boolean isValid = false;
+
+        if (cursor.moveToFirst()) {
+            String storedPassword = cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD));
+
+            if (password.equals(storedPassword)) {
+                isValid = true;
+            }
+        }
+
         cursor.close();
         return isValid;
+    }
+
+
+    // Method to get user's role based on email
+    public String getUserRole(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT " + COLUMN_ROLE + " FROM " + TABLE_NAME + " WHERE " + COLUMN_EMAIL + "=?";
+        Cursor cursor = db.rawQuery(query, new String[]{email});
+
+        String role = "";
+
+        if (cursor.moveToFirst()) {
+            role = cursor.getString(cursor.getColumnIndex(COLUMN_ROLE));
+        }
+
+        cursor.close();
+        return role;
     }
 }
