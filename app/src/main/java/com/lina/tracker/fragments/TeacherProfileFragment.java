@@ -2,7 +2,9 @@ package com.lina.tracker.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +13,16 @@ import android.widget.Button;
 import com.lina.tracker.LoginActivity;
 import com.lina.tracker.R;
 
-public class StudentProfileFragment extends Fragment {
+public class TeacherProfileFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_student_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_teacher_profile, container, false);
 
         // Logout button
-        Button logoutButton = view.findViewById(R.id.logoutButton);
+        Button logoutButton = view.findViewById(R.id.logoutButtonT);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

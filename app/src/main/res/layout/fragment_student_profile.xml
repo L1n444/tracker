@@ -71,7 +71,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/emailTProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="35dp"
@@ -98,7 +98,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/idTProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="35dp"
@@ -125,7 +125,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/phnTProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="35dp"
@@ -143,7 +143,7 @@
                 android:background="@color/black" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/logoutButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

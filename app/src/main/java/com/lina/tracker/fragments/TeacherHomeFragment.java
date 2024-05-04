@@ -10,11 +10,6 @@ import android.view.ViewGroup;
 
 import com.lina.tracker.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TeacherHomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TeacherHomeFragment extends Fragment {
 
     @Override

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/T_home"
+        android:icon="@drawable/home_icon"
+        android:title="home" />
+    <item
+        android:id="@+id/T_qr"
+        android:icon="@drawable/qr_code"
+        android:title="QR" />
+    <item
+        android:id="@+id/T_rep"
+        android:icon="@drawable/report"
+        android:title="Report" />
+    <item
+        android:id="@+id/T_pro"
+        android:icon="@drawable/profile_icon"
+        android:title="Profile" />
+</menu>

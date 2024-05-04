@@ -91,7 +91,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/phnTProfile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
@@ -139,7 +139,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/emailTProfile"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"

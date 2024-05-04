@@ -53,7 +53,6 @@ public class StudentHomepageActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.profile) {
                     fragment = studentProfileFragment;
                 }
-
                 if (fragment != null) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
                 }

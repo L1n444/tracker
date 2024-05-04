@@ -4,7 +4,8 @@
     package="com.lina.tracker">
 
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tracker"
         tools:targetApi="31">
-
+        <activity
+            android:name=".TeacherHomepageActivity"
+            android:exported="false" />
         <activity
             android:name=".qr_generate"
             android:exported="false" />
@@ -31,24 +34,22 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Corrected activity declaration -->
+        </activity> <!-- Corrected activity declaration -->
         <activity
             android:name=".fragments.CaptureAct"
-            android:screenOrientation="portrait"
-            android:theme="@style/zxing_CaptureTheme"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/zxing_CaptureTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>
